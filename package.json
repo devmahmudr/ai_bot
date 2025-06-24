@@ -1,0 +1,24 @@
+{
+  "name": "ai_bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon dist/src/bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grammyjs/storage-file": "^2.5.1",
+    "axios": "^1.10.0",
+    "dotenv": "^16.5.0",
+    "grammy": "^1.36.3",
+    "groq-sdk": "^0.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "nodemon": "^3.1.10"
+  }
+}
