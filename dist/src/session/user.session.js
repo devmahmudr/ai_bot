@@ -6,7 +6,6 @@ const storage_file_1 = require("@grammyjs/storage-file");
 exports.sessionMiddleware = (0, grammy_1.session)({
     initial: () => ({
         messages: [],
-        language: "uz"
     }),
     storage: new storage_file_1.FileAdapter({
         dirName: "sessions"

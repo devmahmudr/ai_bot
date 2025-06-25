@@ -26,29 +26,27 @@ exports.bot.command("start", (ctx) => __awaiter(void 0, void 0, void 0, function
     var _a;
     yield ctx.reply(`👋 Salom ${((_a = ctx.from) === null || _a === void 0 ? void 0 : _a.first_name) || "foydalanuvchi"}!\n\n` +
         `Men sizga sun'iy intellekt yordamida savollarga javob beraman.\n\n` +
-        `🗣 Tilni o'zgartirish uchun /language buyrug'idan foydalaning.\n\n` +
-        `❓ Oddiy savolingizni yozing va men javob beraman.`);
+        `❓ Shunchaki savolingizni yozing va men javob beraman.`);
 }));
-exports.bot.command("language", (ctx) => __awaiter(void 0, void 0, void 0, function* () {
-    yield ctx.reply("Choose a language:", {
-        reply_markup: {
-            keyboard: [["O‘zbek", "English"]],
-            resize_keyboard: true,
-            one_time_keyboard: true,
-        },
-    });
-}));
-exports.bot.hears(["O‘zbek", "English"], (ctx) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a, _b;
-    const lang = ((_a = ctx.message) === null || _a === void 0 ? void 0 : _a.text) === "O‘zbek" ? "uz" : "en";
-    ctx.session.language = lang;
-    ctx.session.messages = []; // Reset chat so system prompt gets injected again
-    yield ctx.reply(`Language switched to ${(_b = ctx.message) === null || _b === void 0 ? void 0 : _b.text}`, {
-        reply_markup: {
-            remove_keyboard: true,
-        },
-    });
-}));
+// bot.command("language", async (ctx) => {
+//   await ctx.reply("Choose a language:", {
+//     reply_markup: {
+//       keyboard: [["O‘zbek", "English"]],
+//       resize_keyboard: true,
+//       one_time_keyboard: true,
+//     },
+//   });
+// });
+// bot.hears(["O‘zbek", "English"], async (ctx) => {
+//   const lang = ctx.message?.text === "O‘zbek" ? "uz" : "en";
+//   ctx.session.language = lang;
+//   ctx.session.messages = []; // Reset chat so system prompt gets injected again
+//   await ctx.reply(`Language switched to ${ctx.message?.text}`, {
+//     reply_markup: {
+//       remove_keyboard: true,
+//     },
+//   });
+// });
 (0, user_service_1.UserMessage)();
 (0, command_config_1.setCommands)();
 exports.bot.start();

@@ -18,7 +18,7 @@ function UserMessage() {
             var _a, _b;
             const userMessage = (_a = ctx.message) === null || _a === void 0 ? void 0 : _a.text;
             if (ctx.session.messages.length === 0) {
-                ctx.session.messages.push((0, lang_service_1.getSystemPrompt)(ctx.session.language));
+                ctx.session.messages.push((0, lang_service_1.getSystemPrompt)());
             }
             ctx.session.messages.push({ role: "user", content: userMessage });
             try {

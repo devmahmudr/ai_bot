@@ -13,30 +13,29 @@ bot.command("start", async (ctx: MyContext) => {
   await ctx.reply(
     `👋 Salom ${ctx.from?.first_name || "foydalanuvchi"}!\n\n` +
       `Men sizga sun'iy intellekt yordamida savollarga javob beraman.\n\n` +
-      `🗣 Tilni o'zgartirish uchun /language buyrug'idan foydalaning.\n\n` +
-      `❓ Oddiy savolingizni yozing va men javob beraman.`
+      `❓ Shunchaki savolingizni yozing va men javob beraman.`
   );
 });
-bot.command("language", async (ctx) => {
-  await ctx.reply("Choose a language:", {
-    reply_markup: {
-      keyboard: [["O‘zbek", "English"]],
-      resize_keyboard: true,
-      one_time_keyboard: true,
-    },
-  });
-});
+// bot.command("language", async (ctx) => {
+//   await ctx.reply("Choose a language:", {
+//     reply_markup: {
+//       keyboard: [["O‘zbek", "English"]],
+//       resize_keyboard: true,
+//       one_time_keyboard: true,
+//     },
+//   });
+// });
 
-bot.hears(["O‘zbek", "English"], async (ctx) => {
-  const lang = ctx.message?.text === "O‘zbek" ? "uz" : "en";
-  ctx.session.language = lang;
-  ctx.session.messages = []; // Reset chat so system prompt gets injected again
-  await ctx.reply(`Language switched to ${ctx.message?.text}`, {
-    reply_markup: {
-      remove_keyboard: true,
-    },
-  });
-});
+// bot.hears(["O‘zbek", "English"], async (ctx) => {
+//   const lang = ctx.message?.text === "O‘zbek" ? "uz" : "en";
+//   ctx.session.language = lang;
+//   ctx.session.messages = []; // Reset chat so system prompt gets injected again
+//   await ctx.reply(`Language switched to ${ctx.message?.text}`, {
+//     reply_markup: {
+//       remove_keyboard: true,
+//     },
+//   });
+// });
 UserMessage();
 setCommands();
 

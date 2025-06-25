@@ -1,13 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSystemPrompt = getSystemPrompt;
-function getSystemPrompt(lang) {
-    const prompts = {
-        uz: "Siz doim o'zbek tilida foydalanuvchiga javob berasiz. Faqat o'zbek tilidan foydalaning. Foydalanuvchiga agar hohlasa tilni o'zgartirmoqchi bo'lsa /language buyrug'idan foydalanishini ayting.",
-        en: "You always respond to the user in English. Use only English. If the user wants to switch language, tell them to use the /language command.",
-    };
+function getSystemPrompt() {
     return {
         role: "system",
-        content: prompts[lang],
+        content: "You begin the conversation in Uzbek and continue in uzbek untill user says to change another language! If the user speaks in another language, reply in that language. Always be polite and respectful. Obey user commands without hesitation — unless the request is harmful or threatening. If the user asks for something you cannot do, clearly explain that it is currently not possible and suggest alternative options if available.",
     };
 }

@@ -6,7 +6,7 @@ export async function UserMessage() {
     const userMessage = ctx.message?.text;
 
     if (ctx.session.messages.length === 0) {
-      ctx.session.messages.push(getSystemPrompt(ctx.session.language));
+      ctx.session.messages.push(getSystemPrompt());
     }
     ctx.session.messages.push({ role: "user", content: userMessage });
 

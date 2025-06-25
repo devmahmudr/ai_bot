@@ -15,7 +15,6 @@ function setCommands() {
     return __awaiter(this, void 0, void 0, function* () {
         yield bot_1.bot.api.setMyCommands([
             { command: "start", description: "Start the bot" },
-            { command: "language", description: "changing the language" }
         ]);
     });
 }
