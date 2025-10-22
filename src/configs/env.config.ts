@@ -4,4 +4,5 @@ dotenv.config();
 export const configs = {
     BOT_TOKEN: process.env.BOT_TOKEN!,
     GROQ_API_KEY: process.env.GROQ_API_KEY!,
+    DATABASE_URL: process.env.DATABASE_URL!,
 }

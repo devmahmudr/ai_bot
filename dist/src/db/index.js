@@ -32,12 +32,14 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.configs = void 0;
-const dotenv = __importStar(require("dotenv"));
-dotenv.config();
-exports.configs = {
-    BOT_TOKEN: process.env.BOT_TOKEN,
-    GROQ_API_KEY: process.env.GROQ_API_KEY,
-    DATABASE_URL: process.env.DATABASE_URL,
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.db = void 0;
+const postgres_js_1 = require("drizzle-orm/postgres-js");
+const postgres_1 = __importDefault(require("postgres"));
+const schema = __importStar(require("./schema"));
+const env_config_1 = require("../configs/env.config");
+const client = (0, postgres_1.default)(env_config_1.configs.DATABASE_URL);
+exports.db = (0, postgres_js_1.drizzle)(client, { schema });

@@ -12,15 +12,22 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@grammyjs/storage-file": "^2.5.1",
-    "axios": "^1.10.0",
-    "dotenv": "^16.5.0",
-    "grammy": "^1.36.3",
-    "groq-sdk": "^0.25.0"
+    "@grammyjs/conversations": "^1.2.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.10",
+    "grammy": "^1.22.4",
+    "groq-sdk": "^0.3.3",
+    "pg": "^8.11.5",
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
-    "nodemon": "^3.1.10",
-    "typescript": "^5.8.3"
+    "@types/node": "^20.12.12",
+    "@types/pg": "^8.11.6",
+    "drizzle-kit": "^0.20.17",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
   }
 }
